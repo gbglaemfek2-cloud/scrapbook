@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2024~현재 언론보도 스크랩북 — 서울시50플러스재단</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --surface2: #f0ede6;
+  --ink: #1a1814;
+  --ink2: #5a5650;
+  --ink3: #9a9590;
+  --accent: #c8401a;
+  --accent-light: #fdf0ec;
+  --border: #e2ddd6;
+  --border2: #ccc8c0;
+  --serif: 'Noto Serif KR', serif;
+  --sans: 'Noto Sans KR', sans-serif;
+  --radius: 6px;
+  --radius-lg: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+.site-header {
+  background: var(--ink);
+  color: #fff;
+  padding: 2.5rem 2rem 2rem;
+  border-bottom: 3px solid var(--accent);
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.header-brand small {
+  display: block;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.header-brand h1 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: #fff;
+}
+.header-brand h1 em {
+  font-style: normal;
+  color: #f0a882;
+}
+.header-stats {
+  display: flex;
+  gap: 1.5rem;
+}
+.hstat {
+  text-align: right;
+}
+.hstat-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+.hstat-label {
+  display: block;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.06em;
+}
+.btn-export {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: var(--radius);
+  color: #fff;
+  font-size: 13px;
+  font-family: var(--sans);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+  align-self: center;
+}
+.btn-export:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
+
+/* ── Main layout ── */
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ── Controls ── */
+.controls {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.controls-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+.search-wrap svg {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink3);
+  pointer-events: none;
+}
+.search-wrap input {
+  width: 100%;
+  padding: 9px 12px 9px 36px;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  font-family: var(--sans);
+  font-size: 13px;
+  background: var(--bg);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.search-wrap input:focus { border-color: var(--accent); }
+select {
+  padding: 9px 12px;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  font-family: var(--sans);
+  font-size: 13px;
+  background: var(--bg);
+  color: var(--ink);
+  outline: none;
+  cursor: pointer;
+}
+select:focus { border-color: var(--accent); }
+
+/* ── Category pills ── */
+.cats {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.cat-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--border2);
+  background: transparent;
+  color: var(--ink2);
+  font-family: var(--sans);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.cat-pill:hover { border-color: var(--accent); color: var(--accent); }
+.cat-pill.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ── Results bar ── */
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.results-count {
+  font-size: 13px;
+  color: var(--ink2);
+}
+.results-count strong { color: var(--ink); font-weight: 500; }
+
+/* ── Article grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+/* ── Article card ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border-color: var(--border2);
+}
+.card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background: var(--surface2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink3);
+  font-size: 12px;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card-img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink3);
+}
+.card-img-placeholder svg { opacity: 0.4; }
+.card-img-placeholder span { font-size: 11px; }
+.card-img .img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.card:hover .img-overlay { opacity: 1; }
+.img-overlay svg { color: #fff; }
+
+.card-body {
+  padding: 14px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.card-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+  align-self: flex-start;
+}
+.card-title {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ink);
+  flex: 1;
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink3);
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.card-media { font-weight: 500; color: var(--ink2); }
+
+/* ── Modal ── */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20,18,16,0.82);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.modal-backdrop.open { display: flex; }
+.modal {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  max-width: 760px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  animation: modalIn 0.2s ease;
+}
+@keyframes modalIn {
+  from { transform: translateY(12px) scale(0.98); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+}
+.modal-header-info {}
+.modal-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+.modal-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.modal-close {
+  background: none;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink2);
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+.modal-close:hover { background: var(--surface2); border-color: var(--accent); color: var(--accent); }
+.modal-meta {
+  padding: 10px 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--ink2);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.modal-meta span { display: flex; align-items: center; gap: 5px; }
+.modal-img-wrap {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.modal-img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: block;
+}
+.no-img-msg {
+  background: var(--surface2);
+  border: 1px dashed var(--border2);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  text-align: center;
+  color: var(--ink3);
+  font-size: 13px;
+}
+.modal-img-input-row {
+  display: flex;
+  gap: 8px;
+}
+.modal-img-input-row input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  outline: none;
+}
+.modal-img-input-row input:focus { border-color: var(--accent); }
+.btn-save {
+  padding: 8px 16px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-family: var(--sans);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.btn-save:hover { opacity: 0.88; }
+.modal-footer {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.btn-outline {
+  padding: 7px 14px;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-family: var(--sans);
+  background: transparent;
+  color: var(--ink2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-danger {
+  padding: 7px 14px;
+  border: 1px solid #f0a0a0;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-family: var(--sans);
+  background: transparent;
+  color: #c0302a;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-danger:hover { background: #fff0f0; }
+
+/* ── Add article panel ── */
+.add-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-top: 2rem;
+  overflow: hidden;
+}
+.add-panel-header {
+  padding: 1rem 1.5rem;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+.add-panel-header:hover { background: #e8e4dc; }
+.add-panel-body {
+  padding: 1.5rem;
+  display: none;
+}
+.add-panel-body.open { display: block; }
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.form-grid input, .form-grid select {
+  padding: 9px 12px;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  width: 100%;
+  outline: none;
+}
+.form-grid input:focus, .form-grid select:focus { border-color: var(--accent); }
+.form-full { margin-bottom: 12px; }
+.form-full input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  outline: none;
+}
+.form-full input:focus { border-color: var(--accent); }
+
+/* ── Card upload button ── */
+.card-upload-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 4px 9px;
+  font-size: 11px;
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--ink2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s, background 0.15s;
+  z-index: 10;
+  white-space: nowrap;
+}
+.card:hover .card-upload-btn { opacity: 1; }
+.card-upload-btn:hover { background: #fff; color: var(--accent); border-color: var(--accent); }
+.card-img-placeholder .upload-hint-btn {
+  margin-top: 6px;
+  padding: 5px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  font-size: 11px;
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--ink2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s;
+}
+.card-img-placeholder .upload-hint-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Empty ── */
+.empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--ink3);
+  font-size: 14px;
+  grid-column: 1 / -1;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 12px;
+  color: var(--ink3);
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <small>서울시50플러스재단 · 언론홍보</small>
+      <h1>2024~<span id="currentYear"></span>년 사업별 주요<br><em>언론 보도 스크랩북</em></h1>
+    </div>
+    <div style="display:flex;align-items:center;gap:1.5rem;">
+      <div class="header-stats" id="headerStats"></div>
+      <button class="btn-export" onclick="exportHTML()" title="이미지가 내장된 HTML 파일로 저장 → 사내 서버에 올리면 누구든 열람 가능">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        HTML 내보내기
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="controls">
+    <div class="controls-row">
+      <div class="search-wrap">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="기사 제목, 매체명 검색…" oninput="render()">
+      </div>
+      <select id="mediaFilter" onchange="render()"><option value="">매체 전체</option></select>
+      <select id="yearFilter" onchange="render()">
+        <option value="">연도 전체</option>
+        <option value="2026">2026</option>
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+      </select>
+    </div>
+    <div class="cats" id="catPills"></div>
+  </div>
+
+  <div class="results-bar">
+    <div class="results-count" id="resultsCount"></div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <!-- Add panel -->
+  <div class="add-panel">
+    <div class="add-panel-header" onclick="toggleAdd()">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      새 기사 추가
+      <span id="addChevron" style="margin-left:auto;font-size:12px;color:var(--ink3)">▼</span>
+    </div>
+    <div class="add-panel-body" id="addBody">
+      <div class="form-grid">
+        <input type="text" id="nTitle" placeholder="기사 제목 *">
+        <input type="text" id="nMedia" placeholder="매체명 *">
+        <input type="text" id="nDate" placeholder="날짜 (예: 2025.6.10)">
+        <select id="nCat">
+          <option value="">카테고리 선택 *</option>
+          <option>기관 소개 및 성과</option><option>중장년 정책</option>
+          <option>경력설계 상담</option><option>경력인재지원사업</option>
+          <option>채용박람회·설명회</option><option>취업훈련</option>
+          <option>서울시 중장년 일자리박람회</option><option>가치동행일자리</option>
+          <option>창업지원</option><option>40대직업캠프</option>
+          <option>서울시니어일자리지원센터</option><option>중장년취업사관학교</option><option>기타</option>
+        </select>
+      </div>
+      <div class="form-full">
+        <input type="text" id="nImg" placeholder="지면 이미지 URL (선택 — 구글드라이브·사내 서버 등 직접 링크)">
+      </div>
+      <div class="form-full">
+        <input type="text" id="nUrl" placeholder="원문 기사 URL (선택)">
+      </div>
+      <button class="btn-save" onclick="addArticle()">추가하기</button>
+    </div>
+  </div>
+</main>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-header-info">
+        <span class="modal-badge" id="mBadge"></span>
+        <div class="modal-title" id="mTitle"></div>
+      </div>
+      <button class="modal-close" onclick="closeModalDirect()" aria-label="닫기">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-meta" id="mMeta"></div>
+    <div class="modal-img-wrap">
+      <div id="mImgArea"></div>
+      <div class="modal-img-input-row" style="flex-wrap:wrap;gap:8px;">
+        <label style="display:flex;align-items:center;gap:6px;padding:8px 14px;background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius);font-size:13px;font-family:var(--sans);font-weight:500;color:var(--ink2);cursor:pointer;white-space:nowrap;transition:all 0.15s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--ink2)'">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          파일에서 업로드
+          <input type="file" id="mImgFile" accept="image/*" style="display:none" onchange="loadImgFile(this)">
+        </label>
+        <input type="text" id="mImgInput" placeholder="또는 이미지 URL 직접 입력" style="flex:1;min-width:160px;">
+        <button class="btn-save" onclick="saveImg()">저장</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn-outline" id="mUrlBtn" onclick="openUrl()" style="display:none">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:-2px;margin-right:4px"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>원문 보기
+        </button>
+      </div>
+      <button class="btn-danger" onclick="deleteArticle()">삭제</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  서울시50플러스재단 &nbsp;|&nbsp; 2024~2025년 주요 언론 보도 스크랩북 &nbsp;|&nbsp; 내부 배포용
+</footer>
+
+<script>
+const CAT_COLORS = {
+  '기관 소개 및 성과':    {bg:'#dbeafe',fg:'#1e40af'},
+  '중장년 정책':         {bg:'#ede9fe',fg:'#5b21b6'},
+  '경력설계 상담':       {bg:'#d1fae5',fg:'#065f46'},
+  '경력인재지원사업':    {bg:'#dcfce7',fg:'#166534'},
+  '채용박람회·설명회':   {bg:'#fef3c7',fg:'#92400e'},
+  '취업훈련':            {bg:'#ffedd5',fg:'#9a3412'},
+  '서울시 중장년 일자리박람회': {bg:'#fce7f3',fg:'#9d174d'},
+  '가치동행일자리':      {bg:'#f1f5f9',fg:'#334155'},
+  '창업지원':            {bg:'#e0f2fe',fg:'#075985'},
+  '40대직업캠프':        {bg:'#f0fdf4',fg:'#15803d'},
+  '서울시니어일자리지원센터': {bg:'#f3e8ff',fg:'#7e22ce'},
+  '중장년취업사관학교':  {bg:'#fff7ed',fg:'#c2410c'},
+  '기타':                {bg:'#f8fafc',fg:'#475569'},
+};
+
+let articles = [
+  {id:1,cat:'기관 소개 및 성과',media:'세계일보',date:'2025.11.24',title:'중장년 인턴 새출발… 인생2막 "JOB"았다',img:'',url:''},
+  {id:2,cat:'기관 소개 및 성과',media:'한국경제',date:'2025.4.25',title:'"40세 이후 인생, 다시 설계하세요"… 중장년 "일 전환기" 돕는다',img:'',url:''},
+  {id:3,cat:'기관 소개 및 성과',media:'내일신문',date:'2025.1.17',title:'중장년 고용정책, 일자리 경제로 전환해야',img:'',url:''},
+  {id:4,cat:'기관 소개 및 성과',media:'세계일보',date:'2025.1.8',title:'중장년 직업전환·맞춤형 일자리 지원 강화',img:'',url:''},
+  {id:5,cat:'기관 소개 및 성과',media:'동아일보',date:'2024.12.24',title:'올해 중장년 2132명 "인생 2막" 활짝 열었다',img:'',url:''},
+  {id:6,cat:'기관 소개 및 성과',media:'서울경제',date:'2024.11.1',title:'"인생2막 준비 40대부터…경제적 능력 지속 돕죠"',img:'',url:''},
+  {id:7,cat:'중장년 정책',media:'머니투데이',date:'2025.9.25',title:'소득공백 메울 "중장년 일자리맵" 나온다',img:'',url:''},
+  {id:8,cat:'중장년 정책',media:'세계일보',date:'2025.9.25',title:'"은퇴 후 소득 공백" 중장년 구직 돕는다',img:'',url:''},
+  {id:9,cat:'중장년 정책',media:'한국경제',date:'2025.9.24',title:'서울 중장년층 83% "5년내 재취업 원해"',img:'',url:''},
+  {id:10,cat:'중장년 정책',media:'세계일보',date:'2025.5.28',title:'중장년 재취업 정보 "깜깜"… "공공 플랫폼 구축해야"',img:'',url:''},
+  {id:11,cat:'중장년 정책',media:'세계일보',date:'2025.4.18',title:'고스펙도 재취업 막막… 갈 곳 잃은 중장년',img:'',url:''},
+  {id:12,cat:'중장년 정책',media:'서울신문',date:'2025.3.7',title:'"정년 넘어도 안정적 근로소득 필요"… 중장년 노후 대책 찾는다',img:'',url:''},
+  {id:13,cat:'중장년 정책',media:'동아일보',date:'2025.3.7',title:'"평균 49.4세에 퇴직… 중장년 일자리 절실"',img:'',url:''},
+  {id:14,cat:'중장년 정책',media:'세계일보',date:'2025.3.5',title:'2차 베이비부머 은퇴 현실화… "중장년 재고용 시급"',img:'',url:''},
+  {id:15,cat:'중장년 정책',media:'한국경제',date:'2025.1.10',title:'온라인 쇼핑에 꽂힌 5060… 소비 "큰손"으로',img:'',url:''},
+  {id:16,cat:'중장년 정책',media:'한국경제',date:'2024.11.13',title:'100세시대 "고용천국" 된 日… 베테랑들, 여든까지 산업현장 누빈다',img:'',url:''},
+  {id:17,cat:'경력설계 상담',media:'주간조선',date:'2024.10.19',title:'재취업 전선에 쏟아지는 "신중년"들',img:'',url:''},
+  {id:18,cat:'경력설계 상담',media:'한국일보',date:'2024.2.5',title:'"취업 자격증 20개를 땄는데, 여전히 재취업 어려워요"',img:'',url:''},
+  {id:19,cat:'경력설계 상담',media:'한국일보',date:'2023.11.27',title:'중장년의 경력과 연륜이 역량이 되려면…',img:'',url:''},
+  {id:20,cat:'경력인재지원사업',media:'동아일보',date:'2025.9.24',title:'"인턴기회 얻어 다시 일터로"… 공기관이 중장년 "내일" 있다',img:'',url:''},
+  {id:21,cat:'경력인재지원사업',media:'주간조선',date:'2025.1.24',title:'노동시장 뒤흔드는 파워시니어들이 온다',img:'',url:''},
+  {id:22,cat:'경력인재지원사업',media:'이데일리',date:'2025.2.11',title:'서울 중장년 "인생이모작" 기회 마련한다',img:'',url:''},
+  {id:23,cat:'경력인재지원사업',media:'매일경제',date:'2024.12.14',title:'53세에 인턴… 아침에 눈 뜨면 행복 그 자체',img:'',url:''},
+  {id:24,cat:'경력인재지원사업',media:'동아일보',date:'2024.2.16',title:'"환갑 앞두고 새로운 일자리가 찾아왔어요"',img:'',url:''},
+  {id:25,cat:'경력인재지원사업',media:'국민일보',date:'2024.3.15',title:'임원 출신 57세 인턴 "하세요→해주세요, 힘들었죠"',img:'',url:''},
+  {id:26,cat:'채용박람회·설명회',media:'국민일보',date:'2025.8.25',title:'"삶의 질 위해… 실력 발휘하고파"',img:'',url:''},
+  {id:27,cat:'채용박람회·설명회',media:'동아일보',date:'2025.5.13',title:'중장년 구직자에 집 주변 일자리 찾아준다',img:'',url:''},
+  {id:28,cat:'채용박람회·설명회',media:'서울경제',date:'2025.3.26',title:'"직무 설명부터 현장 면접까지 한 번에"… 서울시, 중장년 채용설명회 개최',img:'',url:''},
+  {id:29,cat:'채용박람회·설명회',media:'동아일보',date:'2025.1.8',title:'"예순 넘어 첫 직장 생활, 삶의 보람 느껴"',img:'',url:''},
+  {id:30,cat:'채용박람회·설명회',media:'중앙일보',date:'2024.11.12',title:'권고사직, 재취업 한파 4050 "신사오정" 시대',img:'',url:''},
+  {id:31,cat:'채용박람회·설명회',media:'경향신문',date:'2024.5.15',title:'서울시, 배민·카카오T 등 4050 채용설명회',img:'',url:''},
+  {id:32,cat:'채용박람회·설명회',media:'KBS1TV',date:'2024.4.9',title:'50대가 사라진다… 이 나라에 무슨 일이 있었나',img:'',url:''},
+  {id:33,cat:'취업훈련',media:'서울경제',date:'2025.4.15',title:'"중장년 기술·지식 전문가 양성한다"… 서울시, 4050 직업훈련 참가자 모집',img:'',url:''},
+  {id:34,cat:'취업훈련',media:'세계일보',date:'2025.3.28',title:'잡무 내몰리는 중장년… "재취업 훈련 지원 내실화를"',img:'',url:''},
+  {id:35,cat:'취업훈련',media:'중앙일보',date:'2025.1.14',title:'취업에 나이가 어디있나… 서울시 중장년 4400명에 직업훈련',img:'',url:''},
+  {id:36,cat:'취업훈련',media:'중앙일보',date:'2024.6.3',title:'4050 뽑는 기업들 "베테랑 신참" 시대',img:'',url:''},
+  {id:37,cat:'서울시 중장년 일자리박람회',media:'한국경제',date:'2025.7.2',title:'더 일하고 싶은 은퇴자, DDP에 다 모였다',img:'',url:''},
+  {id:38,cat:'서울시 중장년 일자리박람회',media:'아시아투데이',date:'2025.7.4',title:'QR코드로 입장… "일상 되찾고 싶다" 중장년 구직자 "북적"',img:'',url:''},
+  {id:39,cat:'서울시 중장년 일자리박람회',media:'중앙일보',date:'2024.7.23',title:'머리 희끗한 "베테랑 신참" 3000여명 새 인생 도전',img:'',url:''},
+  {id:40,cat:'가치동행일자리',media:'이데일리',date:'2025.1.21',title:'서울시, 중장년 경험·역량 활용 "가치동행일자리" 5,700개 제공',img:'',url:''},
+  {id:41,cat:'가치동행일자리',media:'이데일리',date:'2024.12.2',title:'"가치동행일자리" 인사말하는 오세훈 시장',img:'',url:''},
+  {id:42,cat:'가치동행일자리',media:'중앙일보',date:'2023.11.28',title:'서울시 보람일자리, "약자와 동행" 하며 중장년 인생 2막 지원',img:'',url:''},
+  {id:43,cat:'창업지원',media:'서울경제',date:'2025.3.7',title:'"다니던 회사 나와 창업… 인생 전환점이자 삶의 활력소 됐지요"',img:'',url:''},
+  {id:44,cat:'창업지원',media:'한국경제',date:'2023.12.6',title:'잘나가던 중년 임원, 창업 꿈나무로 다시 뛴다',img:'',url:''},
+  {id:45,cat:'40대직업캠프',media:'노컷뉴스',date:'2025.2.5',title:'40대 직장인들, 늦깎이 "인턴"에 도전하는 이유',img:'',url:''},
+  {id:46,cat:'40대직업캠프',media:'동아일보',date:'2025.3.5',title:'"교육-취업 연계"… 서울시 "40대 직업캠프" 모집',img:'',url:''},
+  {id:47,cat:'40대직업캠프',media:'한겨레',date:'2023.11.24',title:'난 40대, 퇴직후 재취업 수업 듣조',img:'',url:''},
+  {id:48,cat:'서울시니어일자리지원센터',media:'서울신문',date:'2025.11.19',title:'나이야 가라! 6070 "경력 폭포수" 서울에 콸콸',img:'',url:''},
+  {id:49,cat:'서울시니어일자리지원센터',media:'아시아투데이',date:'2025.10.21',title:'"일·배움 한자리서"… "서울시 시니어 일자리박람회" 연다',img:'',url:''},
+  {id:50,cat:'서울시니어일자리지원센터',media:'동아일보',date:'2025.3.13',title:'은빛 머리 휘날리며 런웨이… "은퇴 후 모델 설레요"',img:'',url:''},
+  {id:51,cat:'서울시니어일자리지원센터',media:'머니투데이',date:'2025.2.3',title:'"올해 시니어 취업률 35%에 도전합니다!"',img:'',url:''},
+  {id:52,cat:'서울시니어일자리지원센터',media:'조선일보',date:'2025.1.3',title:'"서울 시니어일자리센터" 2일 개관… 60세 이상 취업 지원',img:'',url:''},
+  {id:53,cat:'기타',media:'매일경제',date:'2025.4.7',title:'"40년 덕력 살렸죠"… 블로그 폭 빠진 시니어',img:'',url:''},
+  {id:54,cat:'기타',media:'조선일보',date:'2023.10.15',title:'지게차·굴착기·전기·방수·조경 기능사… 은퇴 후 몸값 올리는 자격증',img:'',url:''},
+];
+let nextId = 55;
+let activeCat = '전체';
+let openId = null;
+
+// ── localStorage 저장/불러오기 ──
+const STORAGE_KEY = 'scrapbook50plus_images';
+
+function saveToStorage() {
+  try {
+    // 이미지(img)와 추가 기사만 저장 (용량 절약)
+    const data = {
+      images: {},       // id → img
+      added: [],        // 새로 추가된 기사 (id >= 55)
+      nextId: nextId
+    };
+    articles.forEach(a => {
+      if (a.img) data.images[a.id] = a.img;
+      if (a.id >= 55) data.added.push(a);
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch(e) {
+    console.warn('저장 실패 (용량 초과 가능성):', e);
+    alert('이미지 저장에 실패했습니다. 이미지 파일 용량이 너무 클 수 있습니다.');
+  }
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    // 기존 기사에 이미지 복원
+    if (data.images) {
+      articles.forEach(a => {
+        if (data.images[a.id]) a.img = data.images[a.id];
+      });
+    }
+    // 추가된 기사 복원
+    if (data.added && data.added.length) {
+      data.added.forEach(a => {
+        if (!articles.find(x => x.id === a.id)) articles.push(a);
+      });
+    }
+    if (data.nextId) nextId = data.nextId;
+  } catch(e) {
+    console.warn('불러오기 실패:', e);
+  }
+}
+
+loadFromStorage();
+
+function getCatColor(cat) {
+  return CAT_COLORS[cat] || {bg:'#f1f5f9',fg:'#475569'};
+}
+
+function filtered() {
+  const s = document.getElementById('searchInput').value.trim();
+  const m = document.getElementById('mediaFilter').value;
+  const y = document.getElementById('yearFilter').value;
+  return articles.filter(a => {
+    const catOk = activeCat === '전체' || a.cat === activeCat;
+    const sOk = !s || a.title.includes(s) || a.media.includes(s);
+    const mOk = !m || a.media === m;
+    const yOk = !y || a.date.startsWith(y);
+    return catOk && sOk && mOk && yOk;
+  });
+}
+
+function buildMediaOptions() {
+  const sel = document.getElementById('mediaFilter');
+  const cur = sel.value;
+  while (sel.options.length > 1) sel.remove(1);
+  [...new Set(articles.map(a=>a.media))].sort().forEach(m => {
+    const o = new Option(m, m);
+    sel.appendChild(o);
+  });
+  sel.value = cur;
+}
+
+function renderStats() {
+  const total = articles.length;
+  const cats = new Set(articles.map(a=>a.cat)).size;
+  const medias = new Set(articles.map(a=>a.media)).size;
+  document.getElementById('headerStats').innerHTML =
+    `<div class="hstat"><span class="hstat-num">${total}</span><span class="hstat-label">총 기사</span></div>
+     <div class="hstat"><span class="hstat-num">${cats}</span><span class="hstat-label">사업분야</span></div>
+     <div class="hstat"><span class="hstat-num">${medias}</span><span class="hstat-label">매체</span></div>`;
+}
+
+function renderPills() {
+  const counts = {};
+  articles.forEach(a => counts[a.cat] = (counts[a.cat]||0)+1);
+  const cats = ['전체', ...Object.keys(CAT_COLORS)];
+  document.getElementById('catPills').innerHTML = cats.map(c => {
+    const cnt = c === '전체' ? articles.length : (counts[c]||0);
+    return `<button class="cat-pill${activeCat===c?' active':''}" onclick="setCat('${c}')">${c} ${cnt}</button>`;
+  }).join('');
+}
+
+function renderGrid() {
+  const list = filtered();
+  document.getElementById('resultsCount').innerHTML = `<strong>${list.length}</strong>건의 기사`;
+  if (!list.length) {
+    document.getElementById('grid').innerHTML = '<div class="empty">검색 결과가 없습니다.</div>';
+    return;
+  }
+  document.getElementById('grid').innerHTML = list.map(a => {
+    const col = getCatColor(a.cat);
+    const imgHtml = a.img
+      ? `<div class="card-img">
+           <img src="${a.img}" alt="지면 이미지" loading="lazy">
+           <div class="img-overlay"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+           <label class="card-upload-btn" onclick="event.stopPropagation()">
+             <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+             교체
+             <input type="file" accept="image/*" style="display:none" onchange="uploadCardImg(event,${a.id})">
+           </label>
+         </div>`
+      : `<div class="card-img">
+           <div class="card-img-placeholder">
+             <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+             <label class="upload-hint-btn" onclick="event.stopPropagation()">
+               <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+               이미지 업로드
+               <input type="file" accept="image/*" style="display:none" onchange="uploadCardImg(event,${a.id})">
+             </label>
+           </div>
+         </div>`;
+    return `<div class="card" onclick="openModal(${a.id})">
+      ${imgHtml}
+      <div class="card-body">
+        <span class="card-badge" style="background:${col.bg};color:${col.fg}">${a.cat}</span>
+        <div class="card-title">${a.title}</div>
+        <div class="card-meta">
+          <span class="card-media">${a.media}</span>
+          <span>·</span>
+          <span>${a.date}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function render() { renderStats(); renderPills(); renderGrid(); }
+
+function setCat(cat) { activeCat = cat; render(); }
+
+function openModal(id) {
+  const a = articles.find(x=>x.id===id);
+  if (!a) return;
+  openId = id;
+  const col = getCatColor(a.cat);
+  document.getElementById('mBadge').textContent = a.cat;
+  document.getElementById('mBadge').style.background = col.bg;
+  document.getElementById('mBadge').style.color = col.fg;
+  document.getElementById('mTitle').textContent = a.title;
+  document.getElementById('mMeta').innerHTML =
+    `<span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><path d="M4 4h16v16H4z" rx="2"/><path d="M16 2v4M8 2v4M4 10h16"/></svg>${a.date}</span>
+     <span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/></svg>${a.media}</span>`;
+  document.getElementById('mImgInput').value = a.img || '';
+  document.getElementById('mImgArea').innerHTML = a.img
+    ? `<img class="modal-img" src="${a.img}" alt="지면 이미지">`
+    : `<div class="no-img-msg">아직 지면 이미지가 없습니다.<br>아래에 이미지 URL을 입력하고 저장하면 카드에 표시됩니다.</div>`;
+  const urlBtn = document.getElementById('mUrlBtn');
+  if (a.url) { urlBtn.style.display=''; } else { urlBtn.style.display='none'; }
+  document.getElementById('modalBackdrop').classList.add('open');
+}
+
+function saveImg() {
+  const url = document.getElementById('mImgInput').value.trim();
+  const a = articles.find(x=>x.id===openId);
+  if (!a) return;
+  a.img = url;
+  document.getElementById('mImgArea').innerHTML = url
+    ? `<img class="modal-img" src="${url}" alt="지면 이미지">`
+    : `<div class="no-img-msg">이미지가 삭제되었습니다.</div>`;
+  saveToStorage();
+  render();
+}
+
+// 카드에서 직접 파일 업로드
+function uploadCardImg(event, id) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const a = articles.find(x=>x.id===id);
+    if (!a) return;
+    a.img = e.target.result;
+    saveToStorage();
+    render();
+  };
+  reader.readAsDataURL(file);
+}
+
+// 모달에서 파일 선택 시 URL 인풋에 반영
+function loadImgFile(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    document.getElementById('mImgInput').value = '';
+    const a = articles.find(x=>x.id===openId);
+    if (!a) return;
+    a.img = e.target.result;
+    document.getElementById('mImgArea').innerHTML =
+      `<img class="modal-img" src="${e.target.result}" alt="지면 이미지">`;
+    saveToStorage();
+    render();
+  };
+  reader.readAsDataURL(file);
+}
+
+function openUrl() {
+  const a = articles.find(x=>x.id===openId);
+  if (a && a.url) window.open(a.url, '_blank');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalBackdrop')) closeModalDirect();
+}
+function closeModalDirect() {
+  document.getElementById('modalBackdrop').classList.remove('open');
+  openId = null;
+}
+
+function deleteArticle() {
+  if (!openId) return;
+  if (!confirm('이 기사를 삭제할까요?')) return;
+  articles = articles.filter(x=>x.id!==openId);
+  saveToStorage();
+  closeModalDirect();
+  buildMediaOptions();
+  render();
+}
+
+function toggleAdd() {
+  const body = document.getElementById('addBody');
+  const chev = document.getElementById('addChevron');
+  body.classList.toggle('open');
+  chev.textContent = body.classList.contains('open') ? '▲' : '▼';
+}
+
+function addArticle() {
+  const title = document.getElementById('nTitle').value.trim();
+  const media = document.getElementById('nMedia').value.trim();
+  const date  = document.getElementById('nDate').value.trim();
+  const cat   = document.getElementById('nCat').value;
+  const img   = document.getElementById('nImg').value.trim();
+  const url   = document.getElementById('nUrl').value.trim();
+  if (!title || !media || !cat) { alert('제목, 매체명, 카테고리는 필수입니다.'); return; }
+  articles.unshift({id:nextId++, cat, media, date:date||'날짜 미입력', title, img, url});
+  ['nTitle','nMedia','nDate','nImg','nUrl'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('nCat').value='';
+  saveToStorage();
+  buildMediaOptions();
+  render();
+}
+
+document.addEventListener('keydown', e => { if (e.key==='Escape') closeModalDirect(); });
+
+// ── HTML 내보내기 ──
+function exportHTML() {
+  // 현재 HTML 소스를 가져와서 articles 배열 부분만 교체
+  const src = document.documentElement.outerHTML;
+
+  // 현재 articles 데이터를 JSON으로 직렬화
+  const articlesJson = JSON.stringify(articles, null, 2);
+  const nextIdVal = nextId;
+
+  // 원본 소스에서 "let articles = [" ~ "];" 블록을 현재 데이터로 교체
+  const updated = src.replace(
+    /let articles = \[[\s\S]*?\];\s*\nlet nextId = \d+;/,
+    `let articles = ${articlesJson};\nlet nextId = ${nextIdVal};`
+  );
+
+  const blob = new Blob([updated], { type: 'text/html;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  const today = new Date();
+  const dateStr = `${today.getFullYear()}${String(today.getMonth()+1).padStart(2,'0')}${String(today.getDate()).padStart(2,'0')}`;
+  a.download = `scrapbook_50plus_${dateStr}.html`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+// 현재 연도 자동 표시
+const yr = new Date().getFullYear();
+document.getElementById('currentYear').textContent = yr;
+
+buildMediaOptions();
+render();
+</script>
+</body>
+</html>
